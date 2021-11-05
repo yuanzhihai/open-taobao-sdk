@@ -12,10 +12,10 @@ composer require yzh52521/open-taobao-sdk
 <?php
 
 
-$taobao = new \yzh52521\Taobao\Taobao(['key' => 'your-key', 'secret' => 'your-secret']);
+$taobao = new \yzh52521\Taobao\Taobao(['key' => 'your-key', 'secret' => 'your-secret','debug'=>true]);
 
 // 使用如下
-$taobao->request('method', $params);
+$taobao->request('method', $params,false);
 
 // 例子
 print_r($taobao->request('taobao.tbk.item.get', ['fields' => 'num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,seller_id,volume,nick', 'q' => '便利贴']));
