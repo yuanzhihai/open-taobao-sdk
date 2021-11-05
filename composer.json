@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": "^7.2",
-        "hanson/foundation-sdk": "^4.0",
+        "hanson/foundation-sdk": "^5.0",
         "ext-json": "*"
     },
     "autoload": {

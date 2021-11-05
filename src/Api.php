@@ -25,7 +25,7 @@ class Api extends AbstractAPI
 
         $sign = $this->secret;
         foreach ($params as $k => $v) {
-            if (!is_array($v) && '@' !== substr($v, 0, 1)) {
+            if (!is_array($v) && strpos($v, '@') !== 0) {
                 $sign .= "$k$v";
             }
         }
