@@ -7,8 +7,7 @@ use Hanson\Foundation\AbstractAPI;
 class Api extends AbstractAPI
 {
 
-    const HttpURL = 'http://gw.api.taobao.com/router/rest';
-    const HttpsURL = 'https://eco.taobao.com/router/rest';
+    const URL = 'http://gw.api.taobao.com/router/rest';
 
     private $key;
 
@@ -36,7 +35,7 @@ class Api extends AbstractAPI
         return strtoupper(md5($sign));
     }
 
-    public function request($method, $params, $ssl = false, $files = [])
+    public function request($method, $params,  $files = [])
     {
         $http = $this->getHttp();
 
@@ -47,9 +46,7 @@ class Api extends AbstractAPI
         $params['method']      = $method;
         $params['timestamp']   = date('Y-m-d H:i:s');
         $params['sign']        = $this->signature($params);
-
-        $url      = $ssl ? self::HttpsURL : self::HttpURL;
-        $response = call_user_func_array([$http, 'post'], [$url, $params, $files]);
+        $response = call_user_func_array([$http, 'post'], [ self::URL, $params, $files]);
 
         return json_decode((string)$response->getBody(), true);
     }
