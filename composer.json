@@ -1,0 +1,25 @@
+{
+    "name": "yzh52521/open-taobao",
+    "description": "淘宝开放平台sdk",
+    "keywords": [
+        "淘宝",
+        "淘宝开放平台",
+        "淘宝客"
+    ],
+    "authors": [
+        {
+            "name": "yzh52521",
+            "email": "yzh52521@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "hanson/foundation-sdk": "^4.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "yzh52521\\Taobao\\": "src/"
+        }
+    }
+}
